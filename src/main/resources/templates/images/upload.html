@@ -1,0 +1,24 @@
+<!Doctype html>
+<html xmlns:th="htt://thymeleaf.org">
+<head th:replace="layout ::site-head"></head>
+<header th:replace="layout ::
+logged-in"></header>
+<body>
+    <h1>Upload new Image</h1>
+    <form method="post" th:action="@{/images/upload}" enctype="multipart/form-data">
+        <div>Image Title</div>
+        <div><input type="text" id="title" name="title"></div>
+
+        <div>Description</div>
+        <div><textarea rows="7" cols="100" name="description"></textarea></div>
+        <div>
+            <label for="file">Upload file</label>
+            <input type="file" id="file" name="file"/>
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>
+

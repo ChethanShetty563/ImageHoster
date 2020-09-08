@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head th:replace="layout::site-head">
+
+</head>
+<header th:replace="layout :: logged-in"></header>
+<body>
+<h1>Welcome User. These are the images</h1>
+<main id ="images">
+    <post th:each="i : ${images}">
+        <div>
+            <img th:src="'data:image/jpeg;base64,'+${i.imageFile}"/>
+        </div>
+        <a th:href="'/images/' + ${i.title}"> <h3 th:text="${i.title}"> Title of image </h3></a>
+
+        <i>Posted on:</i> <span th:text="${i.date}"></span>
+    </post>
+</main>
+</body>
+</html>
